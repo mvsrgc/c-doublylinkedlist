@@ -111,4 +111,10 @@ int main() {
 
   assert(strcmp(list->first->next->data, "Bye world!") == 0);
   assert(strcmp(list->last->prev->data, "Hello world!") == 0);
+
+  struct Node* foundNode = find(list, "Hello world!");
+  assert(strcmp(list->first->data, foundNode->data) == 0);
+
+  foundNode = find(list, "Bye world!");
+  assert(strcmp(list->last->data, foundNode->data) == 0);
 }
